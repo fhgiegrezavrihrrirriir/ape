@@ -103,13 +103,13 @@ function setup() {
                     var grass = new Grass(j, i, 1);
                     xotArr.push(grass);
                 } else if (matrix[i][j] == 3) {
-                    var gishatich = new Gishatich(j, i, 1);
+                    var gishatich = new Gishatich(j, i, 3);
                     gishatichArr.push(gishatich);
                 } else if (matrix[i][j] == 4) {
-                    var pat = new Pat(j, i, 1);
+                    var pat = new Pat(j, i, 4);
                     patArr.push(pat);
                 } else if (matrix[i][j] == 5) {
-                    var mard = new Mard(j, i, 1);
+                    var mard = new Mard(j, i, 5);
                     mardArr.push(mard);
                 }
             }
