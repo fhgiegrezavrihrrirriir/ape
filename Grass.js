@@ -48,6 +48,7 @@ class Grass {
             if (cord) {
                 var x = cord[0];
                 var y = cord[1];
+                
 
                 var norXot = new Grass(x, y, this.index);
                 xotArr.push(norXot);

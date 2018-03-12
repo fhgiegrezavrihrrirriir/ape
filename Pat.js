@@ -1,5 +1,5 @@
 //*pat
-class Pat {
+class Pat  {
     constructor(x, y, ind) {
         this.index = ind;
         this.x = x;
