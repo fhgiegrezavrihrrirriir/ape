@@ -1,4 +1,4 @@
-//խոտի կլասը
+//խոտի կլասը///
 class Grass {
     constructor(x, y, ind) {
         this.index = ind;
