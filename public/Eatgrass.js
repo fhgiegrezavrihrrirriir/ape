@@ -1,31 +1,6 @@
 //խոտակերի կլասը
+var tvik = 2;
 class Eatgrass extends LivingCreature{
- 
-   
-
-
-
-
-    move() {
-        var emptyCord = this.getDirections(0);
-        var cord = random(emptyCord);
-
-        if (cord) {
-            var x = cord[0];
-            var y = cord[1];
-
-            matrix[y][x] = 2;
-
-            matrix[this.y][this.x] = 0;
-
-            this.x = x;
-            this.y = y;
-
-        }
-    }
-
-
-
     eat() {
 
         var emptyCord = this.getDirections(1);
@@ -48,6 +23,7 @@ class Eatgrass extends LivingCreature{
             for (var i in xotArr) {
                 if (x == xotArr[i].x && y == xotArr[i].y) {
                     xotArr.splice(i, 1);
+                    break;
                 }
             }
             if (this.multiply == 10) {
@@ -87,8 +63,10 @@ class Eatgrass extends LivingCreature{
         for (var i in eatArr) {
             if (this.x == eatArr[i].x && this.y == eatArr[i].y) {
                 eatArr.splice(i, 1);
+                break;
             }
         }
+    
     }
 
 }
