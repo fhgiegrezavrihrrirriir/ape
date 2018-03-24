@@ -34,7 +34,7 @@ function setup() {
 
     for (var i = 0; i < bar; i++) {
         matrix.push([]);
-        for (var j = 0; j <erk; j++) {
+        for (var j = 0; j < erk; j++) {
             matrix[i][j] = 0;
         }
     }
@@ -49,7 +49,7 @@ function setup() {
             c++;
         }
     }
-   var q = 0;
+    var q = 0;
     while (q < eatCount) {
         var x = Math.floor(random(0, erk));
         var y = Math.floor(random(0, bar));
@@ -67,7 +67,7 @@ function setup() {
             w++;
         }
     }
-   var r = 0;
+    var r = 0;
     while (r < patCount) {
         var x = Math.floor(random(0, erk));
         var y = Math.floor(random(0, bar));
@@ -76,7 +76,7 @@ function setup() {
             r++;
         }
     }
-   var t = 0;
+    var t = 0;
     while (t < mardCount) {
         var x = Math.floor(random(0, erk));
         var y = Math.floor(random(0, bar));
@@ -87,41 +87,44 @@ function setup() {
     }
 
 
-        noStroke()
-        frameRate(60);
-        createCanvas(matrix[0].length * side, matrix.length * side);
-        background('#acacac');
+    noStroke()
+    frameRate(60);
+    createCanvas(matrix[0].length * side, matrix.length * side);
+    background('#acacac');
 
 
 
-        for (var i = 0; i < matrix.length; i++) {
-            for (var j = 0; j < matrix[i].length; j++) {
-                if (matrix[i][j] == 2) {
-                    var eatgrass = new Eatgrass(j, i, 2);
-                    eatArr.push(eatgrass);
-                } else if (matrix[i][j] == 1) {
-                    var grass = new Grass(j, i, 1);
-                    xotArr.push(grass);
-                } else if (matrix[i][j] == 3) {
-                    var gishatich = new Gishatich(j, i, 3);
-                    gishatichArr.push(gishatich);
-                } else if (matrix[i][j] == 4) {
-                    var pat = new Pat(j, i, 4);
-                    patArr.push(pat);
-                } else if (matrix[i][j] == 5) {
-                    var mard = new Mard(j, i, 5);
-                    mardArr.push(mard);
-                }
+    for (var i = 0; i < matrix.length; i++) {
+        for (var j = 0; j < matrix[i].length; j++) {
+            if (matrix[i][j] == 2) {
+                var eatgrass = new Eatgrass(j, i, 2);
+                eatArr.push(eatgrass);
+            } else if (matrix[i][j] == 1) {
+                var grass = new Grass(j, i, 1);
+                xotArr.push(grass);
+            } else if (matrix[i][j] == 3) {
+                var gishatich = new Gishatich(j, i, 3);
+                gishatichArr.push(gishatich);
+            } else if (matrix[i][j] == 4) {
+                var pat = new Pat(j, i, 4);
+                patArr.push(pat);
+            } else if (matrix[i][j] == 5) {
+                var mard = new Mard(j, i, 5);
+                mardArr.push(mard);
             }
-
         }
+
     }
+}
 
 
-    function draw() {
-        background('#acacac');
-        for (var i = 0; i < matrix.length; i++) {
-            for (var j = 0; j < matrix[i].length; j++) {
+function draw() {
+    text(frameCount, width / 2, height / 2);
+    background('#acacac');
+    for (var i = 0; i < matrix.length; i++) {
+        for (var j = 0; j < matrix[i].length; j++) {
+
+            if (frameCount < 50) {
                 if (matrix[i][j] == 1) {
                     fill("green");
                     rect(j * side, i * side, side, side);
@@ -142,30 +145,97 @@ function setup() {
                     rect(j * side, i * side, side, side);
                 }
             }
+            else if (frameCount < 100) {
+                if (matrix[i][j] == 1) {
+                    fill("white");
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 2) {
+                    fill("orange");
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 0) {
+                    fill('#acacac');
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 3) {
+                    fill(250, 0, 0);
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 4) {
+                    fill(25, 155, 255);
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 5) {
+                    fill("black");
+                    rect(j * side, i * side, side, side);
+                }
+            }
+            else if (frameCount < 150) {
+                if (matrix[i][j] == 1) {
+                    fill("yellow");
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 2) {
+                    fill("orange");
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 0) {
+                    fill('#acacac');
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 3) {
+                    fill(250, 0, 0);
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 4) {
+                    fill(25, 155, 255);
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 5) {
+                    fill("black");
+                    rect(j * side, i * side, side, side);
+                }
+            }
+            else if (frameCount < 200) {
+                if (matrix[i][j] == 1) {
+                    fill("purple");
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 2) {
+                    fill("orange");
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 0) {
+                    fill('#acacac');
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 3) {
+                    fill(250, 0, 0);
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 4) {
+                    fill(25, 155, 255);
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 5) {
+                    fill("black");
+                    rect(j * side, i * side, side, side);
+                }
+            }
+             if (frameCount > 200) {
+                frameCount = 0;
+            }
         }
 
-
-
-        for (var i in xotArr) {
-            xotArr[i].mul();
-        }
-
-        for (var i in eatArr) {
-            eatArr[i].eat();
-        }
-
-
-        for (var i in gishatichArr) {
-
-            gishatichArr[i].eat();
-        }
-
-        for (var i in patArr) {
-
-            patArr[i].eat();
-        }
-        for (var i in mardArr) {
-
-            mardArr[i].eat();
-        }
     }
+
+
+    for (var i in xotArr) {
+        xotArr[i].mul();
+    }
+
+    for (var i in eatArr) {
+        eatArr[i].eat();
+    }
+
+
+    for (var i in gishatichArr) {
+
+        gishatichArr[i].eat();
+    }
+
+    for (var i in patArr) {
+
+        patArr[i].eat();
+    }
+    for (var i in mardArr) {
+
+        mardArr[i].eat();
+    }
+}
