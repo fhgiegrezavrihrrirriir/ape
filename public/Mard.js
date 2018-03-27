@@ -49,6 +49,10 @@ class Mard extends LivingCreature {
    
 
     mul() {
+           if(frameCount < 40 && frameCount > 20){
+      
+        }
+        else{
         var emptyCord = this.getDirections(0);
 
         var cord = random(emptyCord);
@@ -63,6 +67,7 @@ class Mard extends LivingCreature {
 
             matrix[y][x] = 5;
             this.multiply = 0;
+        }
         }
     }
         die() {

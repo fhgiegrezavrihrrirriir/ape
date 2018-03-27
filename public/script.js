@@ -12,6 +12,7 @@ var patCount = 5;
 var mardCount = 500;
 var patArr = [];
 var gishatichArr = [];
+ var p = document.getElementById("pElement");
 /*
 var matrix = [
     [0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1],
@@ -119,12 +120,13 @@ function setup() {
 
 
 function draw() {
+    
     text(frameCount, width / 2, height / 2);
     background('#acacac');
     for (var i = 0; i < matrix.length; i++) {
         for (var j = 0; j < matrix[i].length; j++) {
 
-            if (frameCount < 50) {
+            if (frameCount < 20) {
                 if (matrix[i][j] == 1) {
                     fill("green");
                     rect(j * side, i * side, side, side);
@@ -144,8 +146,9 @@ function draw() {
                     fill("black");
                     rect(j * side, i * side, side, side);
                 }
+                p.innerHTML ="spring";
             }
-            else if (frameCount < 100) {
+            else if (frameCount < 40) {
                 if (matrix[i][j] == 1) {
                     fill("white");
                     rect(j * side, i * side, side, side);
@@ -165,8 +168,10 @@ function draw() {
                     fill("black");
                     rect(j * side, i * side, side, side);
                 }
+               
+                p.innerHTML ="winter";
             }
-            else if (frameCount < 150) {
+            else if (frameCount < 60) {
                 if (matrix[i][j] == 1) {
                     fill("yellow");
                     rect(j * side, i * side, side, side);
@@ -186,8 +191,9 @@ function draw() {
                     fill("black");
                     rect(j * side, i * side, side, side);
                 }
+                  p.innerHTML ="auton";
             }
-            else if (frameCount < 200) {
+            else if (frameCount < 80) {
                 if (matrix[i][j] == 1) {
                     fill("purple");
                     rect(j * side, i * side, side, side);
@@ -207,14 +213,20 @@ function draw() {
                     fill("black");
                     rect(j * side, i * side, side, side);
                 }
+                  p.innerHTML ="summer";
             }
-             if (frameCount > 200) {
+             if (frameCount > 80) {
                 frameCount = 0;
             }
         }
 
     }
 
+
+
+
+    
+    
 
     for (var i in xotArr) {
         xotArr[i].mul();

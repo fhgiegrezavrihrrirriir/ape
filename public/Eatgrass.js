@@ -42,7 +42,12 @@ class Eatgrass extends LivingCreature{
     }
 
     mul() {
-        var emptyCord = this.getDirections(0);
+        if(frameCount < 40 && frameCount > 20){
+      
+        }
+        else
+        {
+            var emptyCord = this.getDirections(0);
 
         var cord = random(emptyCord);
         if (cord) {
@@ -56,6 +61,7 @@ class Eatgrass extends LivingCreature{
 
             matrix[y][x] = 1;
             this.multiply = 0;
+         }
         }
     }
     die() {

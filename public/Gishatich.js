@@ -43,6 +43,10 @@ class Gishatich extends LivingCreature  {
         }
     }
     mul() {
+         if(frameCount < 40 && frameCount > 20){
+      
+        }
+        else{
         var emptyCord = this.getDirections(0);
 
         var cord = random(emptyCord);
@@ -57,6 +61,7 @@ class Gishatich extends LivingCreature  {
 
             matrix[y][x] = 2;
             this.multiply = 0;
+        }
         }
     }
         die() {
